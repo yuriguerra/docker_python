@@ -1,0 +1,23 @@
+# Sobe máquina docker do mysql
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -p 3306:3306 -v mysqlVolume:/var/lib/mysql -d mysql:latest
+
+# Roda um container
+docker run
+
+# Define o nome de um container
+--name nome-desejado
+
+# Define variáveis de ambiente na máquina virtual
+-e NOME_DA_VARIAVEL=valor_da_variavel
+
+# Pareamento de portas do container com a máquina real
+-p porta_local:porta_container
+
+# Define um volume para salvar os dados
+-v nome_do_volume:local_do_volume_na_maquina_real
+
+# Executa o container em detach mode (sem travar sessão)
+-d
+
+# Remove um container / --force para forçar a parada de um container que esteja em execução
+docker rm id_ou_nome_do_container 
