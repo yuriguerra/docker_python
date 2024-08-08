@@ -7,7 +7,7 @@ def hello_world():
     return "Olá, estou na aplicação setada."
 
 
-@app.rout("/insert", methods=["POST"])
+@app.route("/insert", methods=["POST"])
 def insert():
     userRepo = UserRepo()
     body = request.json
