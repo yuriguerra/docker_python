@@ -3,14 +3,14 @@ from sqlalchemy.orm import sessionmaker
 
 class DBConnection:
 
-    def ___init__(self) -> None:
-        self.connection_string = 'mysql_pymysql://root:my-secret-pw@mysqldb/teste'
+    def __init__(self) -> None:
+        self.__connection_string = 'mysql+pymysql://root:yguerra@mysqldb/teste'
         self.session = None
 
     def __enter__(self):
-        engine = create_engine(self.connection_string)
+        engine = create_engine(self.__connection_string)
         session_maker = sessionmaker()
-        self.session =  session_maker(bing=engine)
+        self.session =  session_maker(bind=engine)
         return self
     
     def __exit__(self, exc_type, exc_val, exc_tb):

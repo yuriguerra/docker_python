@@ -1,5 +1,5 @@
 # Sobe máquina docker do mysql
-docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -p 3306:3306 -v mysqlVolume:/var/lib/mysql -d mysql:latest
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -p 3306:3306 -v mysqlVolume:/var/lib/mysql -d mysql:latest
 
 # Roda um container
 docker run
@@ -21,3 +21,15 @@ docker run
 
 # Remove um container / --force para forçar a parada de um container que esteja em execução
 docker rm id_ou_nome_do_container 
+
+# Builda uma imagem com base na pasta raiz
+docker build . --tag docker-python-v2
+
+# Lista os volumes do docker
+docker volume ls
+
+# Lista redes do docker
+docker network ls
+
+# Cria redes do docker
+docker network create nome-da-rede
